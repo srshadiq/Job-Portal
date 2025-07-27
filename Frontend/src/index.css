@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme Variables */
+:root {
+  /* Light theme colors */
+  --bg-primary: #f8f9fa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e9ecef;
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --text-tertiary: #adb5bd;
+  --border-color: #dee2e6;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --card-bg: #ffffff;
+  --header-bg: #4b75ff;
+}
+
+[data-theme="dark"] {
+  /* Dark theme colors */
+  --bg-primary: #1f1f1f;
+  --bg-secondary: #2d2d2d;
+  --bg-tertiary: #3d3d3d;
+  --text-primary: #f6f6f6;
+  --text-secondary: #d1d1d1;
+  --text-tertiary: #b0b0b0;
+  --border-color: #454545;
+  --shadow-color: rgba(255, 255, 255, 0.1);
+  --card-bg: #2d2d2d;
+  --header-bg: #3556fc;
+}
+
+/* Base body styling with important to override other styles */
+body {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  padding: 0;
+}
+
+/* Light theme body class */
+body.light {
+  background-color: #f8f9fa !important;
+  color: #212529 !important;
+}
+
+/* Dark theme body class */
+body.dark {
+  background-color: #1f1f1f !important;
+  color: #f6f6f6 !important;
+}
+
+/* Ensure root element also follows theme */
+#root {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme-aware utility classes */
+.theme-bg-primary {
+  background-color: var(--bg-primary);
+}
+
+.theme-bg-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.theme-bg-tertiary {
+  background-color: var(--bg-tertiary);
+}
+
+.theme-text-primary {
+  color: var(--text-primary);
+}
+
+.theme-text-secondary {
+  color: var(--text-secondary);
+}
+
+.theme-text-tertiary {
+  color: var(--text-tertiary);
+}
+
+.theme-border {
+  border-color: var(--border-color);
+}
+
+.theme-card {
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.theme-shadow {
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+/* Footer specific background - white in light mode, darkColor-900 in dark mode */
+.footer-bg {
+  background-color: var(--bg-secondary);
+}
+
+[data-theme="dark"] .footer-bg {
+  background-color: #242424 !important;
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+@layer base {
+  ul,
+  ol {
+    list-style: revert;
+    font-size: medium;
+  }
+  p {
+    font-size: medium;
+  }
+  li {
+    margin-left: 1em;
+  }
+}

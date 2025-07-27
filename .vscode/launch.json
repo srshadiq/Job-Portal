@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-JobFinderApplication<Job-Finder>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.jobportal.JobFinderApplication",
+      "projectName": "Job-Finder",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
